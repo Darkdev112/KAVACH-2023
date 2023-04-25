@@ -1,0 +1,51 @@
+.nav{
+    display: flex;
+    margin: 10px 10px;
+}
+.left{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    .logo{
+        margin-right: 15px;
+        height: 50px;
+        width: 50px;
+        background-color: black;
+    }
+}
+.middle{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    .about-us{
+        margin: 0 25px;
+        font-weight: 600;
+    }
+    .home{
+        font-weight: 600;
+        margin-left: -30px;
+    }
+    .contact-us{
+        font-weight: 600;
+    }
+}
+.right{
+    display: flex;
+    align-items: center;
+    .profile{
+        height: 50px;
+        width: 50px;
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .profile-logo{
+            font-size: 40px;
+        }
+    }
+    .login-signUp{
+        margin-right: 15px;
+    }
+}
