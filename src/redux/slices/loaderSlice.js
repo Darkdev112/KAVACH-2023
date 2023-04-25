@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    isLoading  : false,
-    hasLoaded : false
+    isLoading  : false
 }
 
 const loaderSlice = createSlice({
@@ -14,16 +13,10 @@ const loaderSlice = createSlice({
         },
         isClose : (state) => {
             state.isLoading = false
-        },
-        hasOpen : (state) => {
-            state.hasLoaded = true
-        },
-        hasClose : (state) => {
-            state.hasLoaded = false
         }
     }
 })
 
-export const {isOpen, isClose, hasOpen, hasClose} = loaderSlice.actions
+export const {isOpen, isClose} = loaderSlice.actions
 
 export default loaderSlice.reducer

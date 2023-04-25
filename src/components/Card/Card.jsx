@@ -6,20 +6,21 @@ import Debit from '../../../src/Assets/images/debit.png'
 import Coin from '../../../src/Assets/images/coin.png'
 import Crypto from '../../../src/Assets/images/crypto.png'
 import Online from '../../../src/Assets/images/online.png'
+import { Link } from 'react-router-dom'
 
 const Card = () => {
   return (
     <div className='card-section'>
       <h1>HEADING OF THE FRAUD TYPE</h1>
       <div className="cards">
-        <div className="card1 cardm1"><img src={Insurance} alt="" /></div>
-        <div className="card1"><img src={Credit} alt="" /></div>
-        <div className="card1"><img src={Online} alt="" /></div>
+        <Link to='/insurancefraud'><div className="card1 cardm1"><img src={Insurance} alt="" /></div></Link>
+        <Link to='/creditcardfraud'><div className="card1"><img src={Credit} alt="" /></div></Link>
+        <Link to='/onlinefraud'><div className="card1"><img src={Online} alt="" /></div></Link>
       </div>
       <div className="cards cardsd">
-        <div className="card2 cardm2"><img src={Debit} alt="" /></div>
-        <div className="card2"><img src={Crypto} alt="" /></div>
-        <div className="card2"><img src={Coin} alt="" /></div>
+      <Link to='/debitcardfraud'><div className="card2 cardm2"><img src={Debit} alt="" /></div></Link>
+      <Link to='/cryptofraud'><div className="card2"><img src={Crypto} alt="" /></div></Link>
+      <Link to='/coinfraud'><div className="card2"><img src={Coin} alt="" /></div></Link>
       </div>
     </div>
   )
