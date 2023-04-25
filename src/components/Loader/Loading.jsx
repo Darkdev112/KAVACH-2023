@@ -1,6 +1,7 @@
 import React from 'react'
+import "./Loading.scss"
 import { useDispatch, useSelector } from 'react-redux'
-import { ClipLoader } from 'react-spinners'
+import { PacmanLoader } from 'react-spinners'
 
 const Loading = () => {
 
@@ -13,15 +14,15 @@ const Loading = () => {
     }
 
   return (
-    <div>
-        <ClipLoader
-        color="red"
+    <div className='container'>
+        <PacmanLoader
+        color="rgb(36, 36, 36)"
         loading={isLoading}
         cssOverride={override}
-        size={150}
+        size={50}
         aria-label="Loading Spinner"
         data-testid="loader"
-      />
+        />
     </div>
   )
 }
