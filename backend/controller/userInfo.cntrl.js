@@ -14,9 +14,13 @@ const updateUser=async(req,res)=>{
     const Email=req.user.email;
     const oldUser= await userLoginSignup.findOne({email : Email});
     const updatedField=req.body;
-    // console.log(updatedObj);
+    const updatedObject1={...oldUser,...updatedField}
+    // console.log(oldUser);
+    const updatedObject2={...updatedObject1._doc,...updatedField};
+
+    // const updatedObject1={...oldUser,...updatedField}
     const newUser=await userLoginSignup.findOneAndUpdate({email:Email},
-        updatedField,
+        updatedObject2,
         {   
           new: true,
           runValidators: true,
