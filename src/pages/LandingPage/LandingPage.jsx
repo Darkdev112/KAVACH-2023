@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { hasOpen, isClose, isOpen } from '../../redux/slices/loaderSlice'
 import Header from '../../components/Header/Header'
 import Card from '../../components/Card/Card'
+import Navbar from '../../components/Navbar/Navbar'
 
 
 const LandingPage = () => {
@@ -30,6 +31,7 @@ const LandingPage = () => {
       {isLoading && <Loading/>}
       {(!isLoading) && 
       <>
+        <Navbar/>
         <Header/>
         <Card/>
       </>
