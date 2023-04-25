@@ -18,7 +18,7 @@ h1 {
 }
 
 .card1 {
-    margin: 0 20px;
+    margin: 0 80px;
     height: 250px;
     width: 250px;
     background-color: black;
@@ -27,7 +27,7 @@ h1 {
 }
 
 .card2 {
-    margin: 10px 20px;
+    margin: 10px 80px;
     height: 250px;
     width: 250px;
     background-color: black;
@@ -35,7 +35,7 @@ h1 {
     transition: all 0.2s;
 }
 .cardsd{
-    margin-bottom: 50px;
+    padding-bottom: 20px;
 }
 img {
     height: 250px;
@@ -51,16 +51,18 @@ img {
     transform: scale(1.1);
 }
 
-@media(max-width:1004px) {
+@media(max-width:1024px) {
     .cards{
         width: 800px;
     }
     .card1 {
+        margin: 0px 20px;
         height: 25vw;
         width: 25vw;
     }
 
     .card2 {
+        margin: 10px 20px;
         height: 25vw;
         width: 25vw;
     }
