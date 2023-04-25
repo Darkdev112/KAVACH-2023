@@ -2,7 +2,6 @@ const userLoginSignup = require('../models/userLoginSignup.mdl')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const {StatusCodes} = require('http-status-codes');
-const httpStatus = require('http-status');
 
 const signup = async (req, res) => {
   const { username, email, password } = req.body
