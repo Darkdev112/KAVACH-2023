@@ -3,7 +3,7 @@ const app = express()
 const connectDB = require('./db/connect')
 require('dotenv').config()
 const mongoose = require('mongoose')
-const router = require('./routes/fraudRouters.js')
+const router = require('./routes/loginSignup')
 app.use(express.json())
 
 app.use('/',router);
