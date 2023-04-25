@@ -1,9 +1,11 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const connectDB = require('./db/connect')
 require('dotenv').config()
 const mongoose = require('mongoose')
 const router = require('./routes/loginSignup')
+app.use(cors())
 app.use(express.json())
 
 app.use('/',router);

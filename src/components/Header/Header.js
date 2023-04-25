@@ -1,5 +1,7 @@
 import React from 'react'
 import './Header.scss'
+import character from '../../Assets/images/character.png'
+
 
 const Header = () => {
     return (
@@ -12,7 +14,7 @@ const Header = () => {
                         voluptatem pariatur unde illum doloribus provident quia dolore!</div>
                 </div>
                 <div className='head-image'>
-                    <img src="/images/character.png" alt="" />
+                    <img src={character} alt="" />
                 </div>
             </div>
         </div>

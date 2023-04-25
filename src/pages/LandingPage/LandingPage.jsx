@@ -5,7 +5,7 @@ import { hasOpen, isClose, isOpen } from '../../redux/slices/loaderSlice'
 import Header from '../../components/Header/Header'
 import Card from '../../components/Card/Card'
 import Navbar from '../../components/Navbar/Navbar'
-
+import Modal from '../../components/Modal/Modal'
 
 const LandingPage = () => {
   const isLoading = useSelector((state) => {
@@ -31,6 +31,7 @@ const LandingPage = () => {
       {isLoading && <Loading/>}
       {(!isLoading) && 
       <>
+        <Modal/>
         <Navbar/>
         <Header/>
         <Card/>

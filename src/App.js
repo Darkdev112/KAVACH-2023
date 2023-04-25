@@ -7,7 +7,7 @@ import Layout from './components/Layout/Layout';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Provider store={store}>
         <BrowserRouter>
           <Layout>
@@ -15,7 +15,7 @@ function App() {
           </Layout>
         </BrowserRouter>
       </Provider>
-    </>
+    </div>
   );
 }
 
