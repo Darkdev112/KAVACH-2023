@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    word-spacing: 5px;
+}
+
+.cards {
+    padding-top: 30px;
+    margin: auto;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.card1 {
+    margin: 0 20px;
+    height: 250px;
+    width: 250px;
+    background-color: black;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.card2 {
+    margin: 10px 20px;
+    height: 250px;
+    width: 250px;
+    background-color: black;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+.cardsd{
+    margin-bottom: 50px;
+}
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.card1:hover {
+    transform: scale(1.1);
+}
+
+.card2:hover {
+    transform: scale(1.1);
+}
+
+@media(max-width:1004px) {
+    .cards{
+        width: 800px;
+    }
+    .card1 {
+        height: 25vw;
+        width: 25vw;
+    }
+
+    .card2 {
+        height: 25vw;
+        width: 25vw;
+    }
+
+    img {
+        height: 25vw;
+        width: 25vw;
+    }
+}
+@media(max-width: 800px){
+    .cards{
+        width: 500px;
+    }
+}
+@media(max-width: 501px){
+    .cards{
+        flex-direction: column;
+        width: 300px;
+    }
+    .card1 {
+        margin-top: 20px;
+        height: 250px;
+        width: 250px;
+    }
+
+    .card2 {
+        height: 250px;
+        width: 250px;
+    }
+    .cardm1, .cardm2 {
+        margin-top: -10px;
+    }
+    img {
+        height: 250px;
+        width: 250px;
+    }
+}
