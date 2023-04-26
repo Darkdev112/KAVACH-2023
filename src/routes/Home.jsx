@@ -7,6 +7,8 @@ import OnlineFraud from '../pages/OnlineFraud/OnlineFraud'
 import DebitCardFraud from '../pages/DebitCardFraud/DebitCardFraud'
 import CryptoFraud from '../pages/CryptoFraud/CryptoFraud'
 import CoinFraud from '../pages/CoinFraud/CoinFraud'
+import Instamojo from '../components/Instamojo/Instamojo'
+import CheckEMail from '../components/Instamojo/CheckEMail'
  
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
         <Route path='/debitcardfraud' element={<DebitCardFraud/>} />
         <Route path='/cryptofraud' element={<CryptoFraud/>} />
         <Route path='/coinfraud' element={<CoinFraud/>} />
+        <Route path='/instamojo' element={<Instamojo/>} />
+        <Route path='/checkEmail' element={<CheckEMail/>} />
     </Routes>
   )
 }
