@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./Login.scss"
 import axios from 'axios';
+import login from '../../Assets/images/signup.png'
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../../redux/slices/modalSlice';
 import {toast} from 'react-toastify'
@@ -56,16 +57,24 @@ const Login = () => {
   }
 
   return (
-    <div className='signup'>
-        <form className='signupContainer'>
-            <h1>Log In</h1>
-            <hr/>
-            <input type="email" className="signup_input" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required={true}/>
-            <input type="password" className="signup_input" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required={true}/>
-            <button type="submit" className="submitBtn" onClick={handleSubmit}>Login</button>
-        </form>
+    <div className='login'>
+      <div className='login1'>
+      </div>
+      <div className='login2'>
+        <div className='login-image'>
+          <img src={login} />
+        </div>
+        <div className='text'>
+            <input type="email" className="email" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required={true}/>
+            <input type="password" className="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required={true}/>
+           
+            <button type="submit" className="btn" onClick={handleSubmit}>LOGIN</button>
+           </div>
+            <div className='parah'>haven't registered yet? Sign UP</div>
     </div>
+  </div>
+
   )
 }
 
-export default Login
+export default Login;
