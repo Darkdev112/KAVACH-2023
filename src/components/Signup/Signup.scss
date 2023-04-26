@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 .sign{
-    box-sizing: border-box;
     justify-items: center;
     background-color:rgba(33, 13, 58, 1);
-    margin-left: 10%;
     margin-top: 40%;
     width: 400px;
     height: 550px;
@@ -14,30 +13,24 @@
     width: 100px;
     border-radius: 15px 0 0 15px;
 }
-.sign-image{
-    width: 100%;
-}
-img{
-    margin-top: 2px;
-    margin-left: 20px;
+.imgg{
     height: 200px;
     width: 200px;
 }
 .sign2{
-    margin-top: 40px;
-    margin-left: 50px;
+    padding: 44px 0;
+    text-align: center;
 }
 .text{
     margin-top: 30px;
-    margin-left: 30px;
 }
 .name{
     margin-left: -3px;
     background-color:rgba(97, 51, 154, 1);
-    border-radius: 5px;
-    width: 200px;
-    color: rgba(255, 255, 255, 0.42);
-    height: 25px;
+    border-radius: 3px;
+    width: 220px;
+    color: rgb(255, 255, 255);
+    height: 30px;
     font-size: 13px;
     border-style: none;
     outline-style: solid;
@@ -46,11 +39,11 @@ img{
 .email{
     margin-top: 20px;
     background-color:rgba(97, 51, 154, 1);
-    border-radius: 5px;
-    width: 200px;
+    border-radius: 3px;
+    width: 220px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.42);
-    height: 25px;
+    color: rgb(255, 255, 255);
+    height: 30px;
     border-style: none;
     outline-style: solid;
     outline-color: rgba(255, 255, 255, 0.42);
@@ -58,12 +51,12 @@ img{
 .password{
     margin-top: 20px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.42);
+    color: rgb(255, 255, 255);
     background-color:rgba(97, 51, 154, 1);
-    border-radius: 5px;
-    width: 200px;
+    border-radius: 3px;
+    width: 220px;
     border-style: none;
-    height: 25px;
+    height: 30px;
     outline-style: solid;
     outline-color: rgba(255, 255, 255, 0.42);
 }
@@ -73,16 +66,24 @@ img{
 }
 .btn{
     margin-top: 20px;
-    margin-left: 8px;
     width: 190px;
     color: white;
     background-color:rgba(221, 81, 199, 1);
     border-style: none;
     height: 30px;
+    transition: all 0.2s;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.btn:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgba(33, 13, 58, 1);
 }
 .parah{
     color: white;
-    font-size: 10px;
-    margin-top: 10px;
-    margin-left:58px;
+    font-size: 13px;
+    margin-top: 15px;
+    font-family: 'Raleway', sans-serif;
 }
