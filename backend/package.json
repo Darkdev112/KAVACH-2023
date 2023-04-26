@@ -18,6 +18,7 @@
     "http-status": "^1.6.2",
     "http-status-code": "^2.1.0",
     "http-status-codes": "^2.2.0",
+    "instamojo-nodejs": "^0.0.5",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.4",
     "nodemon": "^2.0.22"
