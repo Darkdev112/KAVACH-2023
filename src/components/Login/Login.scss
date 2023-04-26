@@ -1,8 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 .login{
-    box-sizing: border-box;
-    justify-items: center;
-    background-color:rgba(33, 13, 58, 1);
-    margin-left: 10%;
     margin-top: 40%;
     width: 400px;
     height: 550px;
@@ -14,63 +11,59 @@
     width: 100px;
     border-radius: 15px 0 0 15px;
 }
-.login-image{
-    width: 100%;
+.login2{
+    background-color:rgba(33, 13, 58, 1);
+    text-align: center;
+    padding: 55px 0;
 }
-img{
-    margin-top: 10px;
-    margin-left: 20px;
+.img{
     height: 200px;
     width: 200px;
 }
-.login2{
-    margin-top: 40px;
-    margin-left: 50px;
-}
-.text{
-    margin-top: 50px;
-    margin-left: 30px;
-}
-.email{
+
+.e-mail{
     background-color:rgba(97, 51, 154, 1);
     border-radius: 5px;
-    width: 200px;
+    width: 220px;
     color: rgba(255, 255, 255, 0.42);
-    height: 28px;
+    height: 30px;
     border-style: none;
     font-size: 13px;
     outline-style: solid;
     outline-color: rgba(255, 255, 255, 0.42);
 }
-.password{
+.passwordd{
     margin-top: 20px;
     font-size: 13px;
     color: rgba(255, 255, 255, 0.42);
     background-color:rgba(97, 51, 154, 1);
     border-radius: 5px;
-    width: 200px;
+    width: 220px;
     border-style: none;
-    height: 28px;
+    height: 30px;
     outline-style: solid;
     outline-color: rgba(255, 255, 255, 0.42);
 }
-.log{
-     margin-top: 20px;
-     margin-left: 5px;
-}
-.btn{
+.btnn{
     margin-top: 20px;
-    margin-left: 10px;
     width: 190px;
     background-color:rgba(221, 81, 199, 1);
     border-style: none;
     border-radius: 5px;
     color: white;
     height: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
-.parah{
+.btnn:hover{
+    background-color: white;
+    color: rgba(33, 13, 58, 1);
+}
+.parahh{
     color: white;
-    font-size: 10px;
+    font-size: 13px;
     margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
     
 }

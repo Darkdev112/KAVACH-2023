@@ -4,6 +4,7 @@ import { openModal, closeModal, openLogin, closeLogin } from '../../redux/slices
 import "./Modal.scss"
 import Login from '../../components/Login/Login'
 import Signup from '../../components/Signup/Signup'
+import {ImCross} from 'react-icons/im'
 
 const Modal = () => {
     const toggleLogin = useSelector((state) => state.modal.toggleLogin)
@@ -26,7 +27,7 @@ const Modal = () => {
                     {toggleLogin ? <Login/> : <Signup/>}
                     {toggleLogin ? <p>Have not registered yet? <span onClick={()=> {dispatch(closeLogin())}}>Signup</span></p> : <p>Have an account? <span onClick={()=> {dispatch(openLogin())}}>Login</span></p>  }
                     <button className="close-modal" onClick={() => {dispatch(closeModal())}}>
-                        CLOSE
+                        <ImCross className='cross'/>
                     </button>
                 </div>
             </div>}

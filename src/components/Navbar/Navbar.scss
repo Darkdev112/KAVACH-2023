@@ -49,3 +49,30 @@
         margin-right: 15px;
     }
 }
+.burger{
+    display: none;
+    height: 3rem;
+    width: 3rem;
+    background-color: black;
+}
+.navContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+@media(max-width:748px){
+    .burger{
+        display: block;
+    }
+    .nav{
+        background-color: violet;
+    }
+    .middle, .right{
+        display: none;
+    }
+}

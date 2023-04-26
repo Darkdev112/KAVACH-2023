@@ -62,15 +62,16 @@ const Signup = () => {
       </div>
       <div className='sign2'>
         <div className='sign-image'>
-          <img src={sign} />
+          <img className='imgg' src={sign} />
         </div>
         <div className='text'>'
           <input type="name" name="username" className="name" placeholder="Name" value={username} onChange={(e) => setUsername(e.target.value)} required={true} />
           <input type="email" className="email" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required={true} />
           <input type="password" className="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required={true} />
-            <button type="submit" className="btn" onClick={(e) => { e.preventDefault(); handleSubmit(); dispatch(closeLogin()); }}>SIGN UP</button>
-          </div>
-          <div className='parah'>already have an account? Login</div>
+          <br />
+          <button type="submit" className="btn" onClick={(e) => { e.preventDefault(); handleSubmit(); dispatch(closeLogin()); }}>SIGN UP</button>
+        </div>
+        <div className='parah'>already have an account? Login</div>
       </div>
     </div>
   )

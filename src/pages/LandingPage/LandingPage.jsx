@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Loading from '../../components/Loader/Loading'
 import { useDispatch, useSelector } from 'react-redux'
 import { hasOpen, isClose, isOpen } from '../../redux/slices/loaderSlice'
+import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import Card from '../../components/Card/Card'
+import How from '../../components/How/How'
 import Navbar from '../../components/Navbar/Navbar'
 import Modal from '../../components/Modal/Modal'
 import Insurance from '../../../src/Assets/images/insurance.png'
@@ -86,10 +88,10 @@ const LandingPage = () => {
           <Modal />
           <Navbar userToken={userToken} key={key} setKey={setKey} setUserToken={setUserToken} />
           <Header />
+          <How/>
           <div className='card-section'>
             <div className="all-cards">
               <h1>HEADING OF THE FRAUD TYPE</h1>
-              <div className="all-cards">
                 <div className='cards'>
                   {cards.map((card)=>{
                     return(
@@ -97,9 +99,9 @@ const LandingPage = () => {
                     )
                   })}
                 </div>
-              </div>
             </div>
           </div>
+          <Footer/>
         </>
       }
     </>
