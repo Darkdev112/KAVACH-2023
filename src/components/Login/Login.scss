@@ -1,29 +1,71 @@
-.signup{
+.login{
+    box-sizing: border-box;
+    justify-items: center;
+    background-color:rgba(33, 13, 58, 1);
+    margin-left: 40%;
+    width: 400px;
+    height: 500px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius:20px 15px 15px 20px;
 }
-.signupContainer{
-    align-items: center;
-    padding: 4rem 3rem;
-    background-color: rgb(87, 79, 79);
-    color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    hr{
-        width: 100%;
-    }
+.login1{
+    background-color: rgba(217, 217, 217, 1);
+    width: 80px;
+    border-radius: 15px 0 0 15px;
 }
-.signup_input{
-    height: 2rem;
-    width: 20rem;
-    margin-bottom: 0.5rem;
+.login-image{
+    width: 100%;
 }
-.submitBtn{
-    height: 3rem;
-    width: 20rem;
-    background-color: rgb(55, 212, 55);
-    color: aliceblue;
-    text-align: center;
-    padding-bottom: 0.7rem;
+img{
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 200px;
+    width: 200px;
 }
+.login2{
+    margin-top: 40px;
+    margin-left: 50px;
+}
+.text{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.email{
+    background-color:rgba(97, 51, 154, 1);
+    border-radius: 5px;
+    width: 200px;
+    color: rgba(255, 255, 255, 0.42);
+    height: 28px;
+    border-style: none;
+    outline-style: solid;
+    outline-color: rgba(255, 255, 255, 0.42);
+}
+.password{
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.42);
+    background-color:rgba(97, 51, 154, 1);
+    border-radius: 5px;
+    width: 200px;
+    border-style: none;
+    height: 28px;
+    outline-style: solid;
+    outline-color: rgba(255, 255, 255, 0.42);
+}
+.log{
+     margin-top: 20px;
+     margin-left: 5px;
+}
+button{
+    width: 190px;
+    background-color:rgba(221, 81, 199, 1);
+    border-style: none;
+    border-radius: 5px;
+    height: 30px;
+}
+.parah{
+    color: white;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
