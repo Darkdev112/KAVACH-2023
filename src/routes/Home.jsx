@@ -13,6 +13,7 @@ import Subscription  from '../components/Subscription/Subscription'
 import axios from 'axios'
 
 const Home = () => {
+  const [isFifty, setIsFifty] = useState(true);
   const [userDetails, setUserDetails] = useState({
     _id : "",
     createdAt : "",
@@ -49,19 +50,13 @@ const Home = () => {
     }
   }
 
-  const navNow = () => {
-    if(!(userDetails.insuranceFraud)){
-      nav('/subscription')
-    }
-  }
-
   useEffect(() => {
     getUserDetails();
   }, [])
 
   return (
     <Routes>
-        <Route path='/' element={<LandingPage/>} />
+        <Route path='/' element={<LandingPage userDetails={userDetails}/>} />
         <Route path='/insurancefraud' element={<InsuranceFraud userDetails={userDetails}/>} />
         <Route path='/creditcardfraud' element={<CreditCardFraud userDetails={userDetails}/>} />
         <Route path='/onlinefraud' element={<OnlineFraud userDetails={userDetails}/>} />
@@ -69,8 +64,8 @@ const Home = () => {
         <Route path='/cryptofraud' element={<CryptoFraud userDetails={userDetails}/>} />
         <Route path='/coinfraud' element={<CoinFraud userDetails={userDetails}/>} />
         <Route path='/instamojo' element={<Instamojo/>} />
-        <Route path='/checkEmail' element={<CheckEMail/>} />
-        <Route path='/subscription' element={<Subscription/>}/>
+        <Route path='/checkEmail' element={<CheckEMail userDetails={userDetails} isFifty={isFifty}/>} />
+        <Route path='/subscription' element={<Subscription userDetails={userDetails} setIsFifty={setIsFifty}/>}/>
     </Routes>
   )
 }

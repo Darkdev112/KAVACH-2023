@@ -24,7 +24,12 @@ router.route('/instamojo',(req,res)=>{
 })
 router.post('/pay',paymentGateway);
 router.get('/success',(req,res)=>{
-    res.send("Payment Was SuccessFul please check your email for invoice in pdf");
+    const {payId} = req
+    console.log(req.params);
+    res.json({
+        status : "ok",
+        msg : "Payment Was SuccessFul please check your email for invoice in pdf"
+    });
 })
 
 module.exports=router;

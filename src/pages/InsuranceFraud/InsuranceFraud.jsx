@@ -1,54 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import "./InsuranceFraud.css"
+import "./InsuranceFraud.scss"
 import { useNavigate } from 'react-router'
-import axios from 'axios';
 
-const InsuranceFraud = () => {
-  const [userDetails, setUserDetails] = useState({
-    _id : "",
-    createdAt : "",
-    updatedAt : "",
-    username  : "",
-    email : "",
-    password : "",
-    coinDetectionFraud : false,
-    creditCardFraud : false,
-    cryptoFraud : false,
-    debitCardFraud : false,
-    insuranceFraud : false,
-    onlineFraud : false,
-    hasPurchasedFullModel : false,
-  });
+const InsuranceFraud = ({userDetails}) => {
+  
   const nav = useNavigate();
 
-  
-  const getUserDetails = async () => {
-    const token = localStorage.getItem('token');
-    console.log(token);
-    if (token) {
-      const response = await axios.get('http://localhost:2000/singleUser', {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        }
-      })
-      if (response.data.status === "ok") {
-        setUserDetails(response.data.data)
-      } else {
-        console.log("single user fetch failed");
-      }
-    }
-  }
-
   const navNow = () => {
-    if(!(userDetails.insuranceFraud)){
+    if((!userDetails.insuranceFraud) && (!userDetails.hasPurchasedFullModel)){
       nav('/subscription')
     }
   }
-
-  useEffect(() => {
-    getUserDetails();
-  }, [])
 
   useEffect(()=> {
     if(userDetails.email){
