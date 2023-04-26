@@ -8,6 +8,11 @@ const router = require('./routes/loginSignup')
 app.use(cors())
 app.use(express.json())
 
+const bodyParser=require('body-parser');
+
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+
 app.use('/',router);
 // require("./routes/fraudRouters.js")(app);
 

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+.fill-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    font-size: 1.1rem;
+    padding: 3rem;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 2rem;
+}
+.form{
+    /* width:50%; */
+    display: flex;
+    justify-content: center;
+}
+.form-1{
+    margin-right: 2.5rem;
+}
+.form-2{
+    margin-left: 2.5rem;
+}
+input,select{
+    width:15rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: white;
+    color: rgb(26, 22, 22);
+    background: rgba(247, 241, 241, 0.541);
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+.input-box{
+    margin-top: 1.5rem;
+}
+.submitBtn{
+    cursor: pointer;
+    margin-top: 1.5rem;
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 64px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.submitBtn:hover{
+    border: 2px solid #4CAF50;
+    background:white;
+    color: #4CAF50;
+    font-weight: 700;
+}
+.submitBtnCont{
+    text-align: center;
+}
+input:focus,select:focus{
+ outline: none;
+ border:2px solid black;
+}
+@media (max-width:660px){
+    .form{
+        flex-direction: column;
+    }
+    .form-1{
+        margin: 0;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .form-2{
+        margin: 0;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
