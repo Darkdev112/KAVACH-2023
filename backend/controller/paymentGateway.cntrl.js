@@ -7,6 +7,7 @@ const paymentGateway=async(req,res)=>{
     console.log(amount);
 
     const data = new Insta.PaymentData();
+    console.log(data);
     const REDIRECT_URL="http://localhost:2000/success";
 
     data.setRedirectUrl(REDIRECT_URL);
