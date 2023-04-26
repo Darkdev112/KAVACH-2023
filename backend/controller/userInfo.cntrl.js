@@ -4,9 +4,9 @@ const {StatusCodes} = require('http-status-codes');
 const getSingleUser=async(req,res)=>{
     const Email=req.user.email;
     const oldUser=await userLoginSignup.findOne({email:Email});
-    res.send({
-        status:StatusCodes.OK,
-        message:oldUser,
+    res.json({
+        status:"ok",
+        data:oldUser,
     })
 }
 
