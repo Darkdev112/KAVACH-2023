@@ -11,8 +11,12 @@ const LandingPage = () => {
   const isLoading = useSelector((state) => {
     return state.loader.isLoading
   })
+  const show = useSelector((state) => {
+    return state.modal.show
+  })
   const dispatch = useDispatch();
   const [userToken,setUserToken] = useState("");
+  const [key, setKey] = useState(0);
 
   
   useEffect(() => {
@@ -25,6 +29,15 @@ const LandingPage = () => {
     }
   }, [])
   
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if(token){
+      setUserToken(token)
+      setKey(Math.random())
+    }
+  }, [userToken,show])
+  
+  
 
   return (
     <>
@@ -32,7 +45,7 @@ const LandingPage = () => {
       {(!isLoading) && 
       <>
         <Modal/>
-        <Navbar/>
+        <Navbar userToken={userToken} key={key} setKey={setKey} setUserToken={setUserToken}/>
         <Header/>
         <Card/>
       </>

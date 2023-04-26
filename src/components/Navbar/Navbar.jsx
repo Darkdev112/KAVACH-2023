@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.scss'
 import {RiAccountCircleFill} from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
 import { openModal } from '../../redux/slices/modalSlice'
 
-const Navbar = () => {
+const Navbar = ({userToken, setUserToken}) => {
+  
   const dispatch = useDispatch();
   return (
     <div>
@@ -19,7 +20,8 @@ const Navbar = () => {
             <div className="contact-us">contact us/query</div>
         </div>
         <div className="right">
-            <div className="login-signUp" onClick={() => {dispatch(openModal())}}>Login/SignUp</div>
+            {!userToken && <div className="login-signUp" onClick={() => {dispatch(openModal())}}>Login/SignUp</div>}
+            {userToken && <div className="login-signUp" onClick={() => {localStorage.removeItem('token'); setUserToken("")}}>Logout</div>}
             <div className="profile"><RiAccountCircleFill className='profile-logo'/></div>
         </div>
       </div>

@@ -5,22 +5,26 @@ const {StatusCodes} = require('http-status-codes');
 
 const signup = async (req, res) => {
   const { username, email, password } = req.body
+  
   // console.log(username);
   const encryptedPassword = await bcrypt.hash(password, 10)
   try {
+    const oldUser = await userLoginSignup.find({ email })
+    if (oldUser.length != 0) {
+      return res.send({data : "User Already Exists"})
+    }
     const register = await userLoginSignup.create({
       username,
       email,
       password: encryptedPassword,
     })
     res.json({
-      status: StatusCodes.CREATED,
-      data: { register },
+      status: "ok",
+      data: register ,
     })
   } catch (error) {
     res.json({
-      status:httpStatus.NOT_FOUND,
-      msg: error,
+      error: error,
     })
   }
 }
@@ -29,21 +33,20 @@ const login = async (req, res) => {
   const { email, password } = req.body
   const oldUser = await userLoginSignup.findOne({ email })
   if (!oldUser) {
-    res.json({
-      status:StatusCodes.NOT_FOUND,
-      msg: 'User Not Found',
+    return res.json({
+      error: 'User Not Found',
     })
   }
  
   if (await bcrypt.compare(password, oldUser.password)) {
     const token = jwt.sign({email : oldUser.email, username : oldUser.username}, process.env.JWT_SECRET)
     if (res.status(201)) {
-      return res.json({ status:StatusCodes.OK, data: token })
+      return res.json({ status:"ok", data: token })
     } else {
       return res.json({ error: 'error' })
     }
   }
-  res.json({ status:StatusCodes.NOT_FOUND, error: 'Invalid Password' })
+  res.json({ error: 'Invalid Password' })
 }
 
 
