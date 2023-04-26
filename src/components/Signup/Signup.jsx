@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./Signup.scss"
 import { openLogin, closeLogin } from '../../redux/slices/modalSlice';
 import { useDispatch } from 'react-redux';
+import sign from '../../Assets/images/createacc.png'
 
 const Signup = () => {
   const [email,setEmail] = useState("");
@@ -20,17 +21,25 @@ const Signup = () => {
   }
 
   return (
-    <div className='signup'>
-        <form className='signupContainer'>
-            <h1>Sign Up</h1>
-            <hr/>
-            <input type="name" name="username" className="signup_input"  placeholder="Name" value={username} onChange={(e) => setUsername(e.target.value)}/>
-            <input type="email" className="signup_input" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" className="signup_input" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit" className="submitBtn" onClick={(e) => {e.preventDefault(); handleSubmit();  dispatch(closeLogin());}}>Signup</button>
-        </form>
+    <div className='sign'>
+      <div className='sign1'>
+      </div>
+      <div className='sign2'>
+        <div className='sign-image'>
+          <img src={sign} />
+        </div>
+        <div className='text'>'
+      <input type="name"  id=""  className='name'  placeholder='Name' required/>
+     <input type="email"  className="email" id="" placeholder='Email' required/>
+     <input type="password" className="password" id=""  placeholder='Password' required/>
+     <div className='log'>
+     <button>SIGN UP</button>
+     </div>
+        <div className='parah'>already have an account? Login</div>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default Signup
+export default Signup

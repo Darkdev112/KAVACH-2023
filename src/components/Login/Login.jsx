@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import "./Login.scss"
 import axios from 'axios';
+import login  from '../../Assets/images/signup.png';
 
 const Login = () => {
-  const [email,setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:2000/login',{email,password},{})
+      const response = await axios.post('http://localhost:2000/login', { email, password }, {})
       console.log(response.data.data);
       localStorage.setItem('token', response.data)
     } catch (error) {
@@ -18,16 +19,24 @@ const Login = () => {
   }
 
   return (
-    <div className='signup'>
-        <form className='signupContainer'>
-            <h1>Log In</h1>
-            <hr/>
-            <input type="email" className="signup_input" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" className="signup_input" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit" className="submitBtn" onClick={handleSubmit}>Login</button>
-        </form>
+    <div className='login'>
+      <div className='login1'>
+      </div>
+      <div className='login2'>
+        <div className='login-image'>
+          <img src={login} />
+        </div>
+        <div className='text'>
+     <input type="email"  className="email" id="" placeholder='email' required/>
+     <input type="password" className="password" id=""  placeholder='password' required/>
+     <div className='log'>
+     <button>Login</button>
+     </div>
+        <div className='parah'>haven't registered yet? Sign UP</div>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default Login
+export default Login

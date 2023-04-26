@@ -7,6 +7,8 @@ import OnlineFraud from '../pages/OnlineFraud/OnlineFraud'
 import DebitCardFraud from '../pages/DebitCardFraud/DebitCardFraud'
 import CryptoFraud from '../pages/CryptoFraud/CryptoFraud'
 import CoinFraud from '../pages/CoinFraud/CoinFraud'
+import Login from '../components/Login/Login'
+import Signup from '../components/Signup/Signup'
  
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
         <Route path='/debitcardfraud' element={<DebitCardFraud/>} />
         <Route path='/cryptofraud' element={<CryptoFraud/>} />
         <Route path='/coinfraud' element={<CoinFraud/>} />
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
     </Routes>
   )
 }
