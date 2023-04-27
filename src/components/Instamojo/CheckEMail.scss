@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+.email-section{
+    display: flex;
+    justify-content: center;
+    background-image: url('../src/Assets/Images/email-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100vh;
+}
+.email{
+    margin: auto;
+    width: 350px;
+    height: 450px;
+    background-color: rgb(238, 236, 236, 0.7);
+    backdrop-filter: blur(2px);
+    box-shadow: 1px 1px 15px black;
+    border-radius: 20px;
+}
+.email-img{
+    text-align: center;
+}
+.img1{
+    width: 350px;
+    height: 200px;
+}
+
+.img2{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 12rem;
+    transform: translate(-50%, -50%);
+}
+.heading-down{
+    margin-top: 60px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1.5px;
+}
+.para-down{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    width: 250px;
+    margin: auto;
+}
