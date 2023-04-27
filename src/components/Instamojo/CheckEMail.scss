@@ -2,7 +2,7 @@
 .email-section{
     display: flex;
     justify-content: center;
-    background-image: url('../src/Assets/Images/email-bg.jpg');
+    background-image: url('../../../src/Assets/images/email-bg.jpg');
     background-repeat: no-repeat;
     background-size: auto;
     height: 100vh;
@@ -41,4 +41,11 @@
     font-weight: 500;
     width: 250px;
     margin: auto;
+}
+
+.linkbro{
+    text-decoration: underline;
+    color: rgb(34, 30, 30);
+    font-weight: bold !important;
+    cursor: pointer;
 }

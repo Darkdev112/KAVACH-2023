@@ -1,7 +1,10 @@
 import React from 'react'
+import './CheckEMail.scss'
 import { useNavigate } from 'react-router'
 import {toast} from 'react-toastify'
 import axios from 'axios'
+import email from '../../../src/Assets/images/image 13.png'
+import  bg from '../../Assets/images/Group 50.png'
 
 const CheckEMail = ({userDetails, isFifty}) => {
   const nav = useNavigate();
@@ -105,11 +108,10 @@ const CheckEMail = ({userDetails, isFifty}) => {
       </div>
       <div className="email-img"><img className='img2' src={email} alt="" />
         <h3 className='heading-down'>Check your email</h3>
-        <p className='para-down'>We sent an email to you at your email adress.You can proceed your payment by clicking on that magic link</p>
+        <p className='para-down'>We sent an email to you at your email adress.You can proceed your payment by clicking on that <span className='linkbro' onClick={checkPayment}>magic link</span></p>
       </div>
       </div>
     </div>
-      <h1>If payment is complete <span onClick={checkPayment}>click here</span></h1>
     </>
   )
 }
