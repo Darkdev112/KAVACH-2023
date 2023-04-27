@@ -1,11 +1,12 @@
 import React from 'react'
 import './How.scss'
+// import bg from '../../../src/Assets/images/how.jpg'
 
 const How = () => {
   return (
     <div>
       <div className="how">
-        <h1>HOW TO USE</h1>
+        <div className='h1'>HOW TO <span className='use-how'>USE</span></div>
         <div className="video"></div>
       </div>
     </div>

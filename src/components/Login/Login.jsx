@@ -7,6 +7,7 @@ import { closeModal } from '../../redux/slices/modalSlice';
 import { closeLogin } from '../../redux/slices/modalSlice';
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
+import logo from '../../../src/Assets/images/logo.png'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -62,10 +63,22 @@ const Login = () => {
   return (
     <div className='login'>
       <div className='login1'>
+        <img className='login-logoo' src={logo} alt="" />
+        <div className="fraud-all">
+          <h2 className='fraud-h'>F</h2>
+          <h2 className='fraud-h'>R</h2>
+          <h2 className='fraud-h'>A</h2>
+          <h2 className='fraud-h'>U</h2>
+          <h2 className='fraud-h'>D</h2>
+        </div>
+        <h2 className='stop-h'>S</h2>
+        <h2 className='stop-h'>T</h2>
+        <h2 className='stop-h'>O</h2>
+        <h2 className='stop-h'>P</h2>
       </div>
       <div className='login2'>
         <div className='login-image'>
-          <img className='img' src={login} alt='login'/>
+          <img className='img' src={login} alt='login' />
         </div>
         <div className='text'>
           <input type="email" className="e-mail" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required={true} />
@@ -73,7 +86,9 @@ const Login = () => {
 
           <button type="submit" className="btnn" onClick={handleSubmit}>LOGIN</button>
         </div>
-        <div className="parahh" >haven't registered yet? <span onClick={()=> {dispatch(closeLogin())}}>Sign Up</span></div>
+        <div className="parahh" >haven't registered yet? <span onClick={() => { dispatch(closeLogin()) }}>
+          <span className='sign-cover'>Sign Up</span>
+        </span></div>
       </div>
     </div>
 

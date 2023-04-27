@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 h1 {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.15rem;
     word-spacing: 5px;
 }
 .all-cards{
-    margin-top: -20px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
+    background-image: url('../../../src/Assets/images/fooot.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .cards {
     padding-top: 30px;
+    padding-bottom: 30px;
     margin: auto;
     display: flex;
     flex-flow: row wrap;
@@ -73,4 +76,21 @@ img {
         height: 250px;
         width: 250px;
     }
+}
+.heading-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    background-color: rgba(255, 255, 255, 0.281);
+    width: 580px;
+    margin: auto;
+    color: white;
+    height: 40px;
+    color: black;
+    backdrop-filter: blur(2px);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.605);
+}
+.fraud-typee{
+    color: red;
 }

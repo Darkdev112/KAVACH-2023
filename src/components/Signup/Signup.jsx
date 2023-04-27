@@ -5,6 +5,7 @@ import sign from '../../Assets/images/createacc.png';
 import { openLogin, closeLogin } from '../../redux/slices/modalSlice';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify'
+import logo from '../../../src/Assets/images/logo.png'
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -59,6 +60,18 @@ const Signup = () => {
   return (
     <div className='sign'>
       <div className='sign1'>
+        <img className='signup-logooo' src={logo} alt="" />
+        <div className="fraud-all-h1">
+          <h2 className='fraud-h1'>F</h2>
+          <h2 className='fraud-h1'>R</h2>
+          <h2 className='fraud-h1'>A</h2>
+          <h2 className='fraud-h1'>U</h2>
+          <h2 className='fraud-h1'>D</h2>
+        </div>
+        <h2 className='stop-h1'>S</h2>
+        <h2 className='stop-h1'>T</h2>
+        <h2 className='stop-h1'>O</h2>
+        <h2 className='stop-h1'>P</h2>
       </div>
       <div className='sign2'>
         <div className='sign-image'>
@@ -71,7 +84,9 @@ const Signup = () => {
           <br />
           <button type="submit" className="btn" onClick={(e) => { e.preventDefault(); handleSubmit(); dispatch(closeLogin()); }}>SIGN UP</button>
         </div>
-        <div className='parah'>already have an account? <span onClick={()=> {dispatch(openLogin())}}>Login</span></div>
+        <div className='parah'>already have an account? <span onClick={()=> {dispatch(openLogin())}}>
+          <span className='login-hover'>Login</span>
+        </span></div>
       </div>
     </div>
   )
