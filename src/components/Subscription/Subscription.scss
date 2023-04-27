@@ -1,0 +1,117 @@
+.subscriptionContainer{
+    text-align: center;
+    height: 100vh ;
+    padding-top: 3rem;
+}
+.subCardContainer{
+    display: flex;
+    justify-content:space-evenly;
+    margin-bottom: 5rem;
+    align-items: center;
+    margin-top: 20vh;
+}
+.subCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.subCard:hover{
+        transform: scale(1.1);
+}
+.cardHead{
+    background: #ffd700;
+    color: black;
+    text-align: center;
+    width: 20rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 10px 10px 0 0;
+    font-weight: 600;
+}
+.priceCard{
+    font-size: 5rem;
+    color: white;
+   margin-bottom: 3rem;
+}
+.subCardContent1{
+    text-align: center;
+    background: linear-gradient(#ff83c1ad,rgb(230, 95, 117));
+    width:20rem;
+    height:20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+}
+.subCardContent2{
+    text-align: center;
+    background: linear-gradient(#71c7ecc0,rgb(74, 74, 179));
+    width:20rem;
+    height:20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius:0 0 10px 10px;
+}
+.OrStrip{
+    width: 0px;
+    height: 8rem;
+    border: 1px solid black;
+}
+.OR{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.OrText{
+    font-size: 3rem;
+}
+.subCardDetails{
+    font-size:1.2rem;
+    font-weight: 500;
+    text-align: start;
+    color: #4c4d4a;
+}
+.subCardRupee{
+    font-size: 3rem;
+}
+
+@media (max-width:846px){
+    .cardHead{
+       width:18rem;
+       height:3rem
+    }
+    .subCardContent1{
+       width:18rem;
+       height:18rem
+    }
+    .subCardContent2{
+        width:18rem;
+       height:18rem
+    }
+    .OrText{
+        font-size: 2rem;
+    }
+}
+@media (max-width:746px){
+    .subCardContainer{
+        flex-direction: column;
+    }
+    .OrStrip{
+        display: none;
+    }
+    .OrText{
+        padding: 2rem;
+    }
+}
