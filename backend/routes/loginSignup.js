@@ -10,7 +10,7 @@ Insta.setKeys(API_KEY,AUTH_KEY);
 Insta.isSandboxMode(true);
 
 
-const paymentGateway=require("../controller/paymentGateway.cntrl");
+const {paymentGateway,successController}=require("../controller/paymentGateway.cntrl");
 
 const {signup,login}=require("../controller/loginSignup.cntrl");
 const {getSingleUser,updateUser}=require("../controller/userInfo.cntrl");
@@ -23,14 +23,7 @@ router.route('/instamojo',(req,res)=>{
     res.sendFile(__dirname + ".../src/components/Instamojo/Instamojo.jsx")
 })
 router.post('/pay',paymentGateway);
-router.get('/success',(req,res)=>{
-    const {payId} = req
-    console.log(req.params);
-    res.json({
-        status : "ok",
-        msg : "Payment Was SuccessFul please check your email for invoice in pdf"
-    });
-})
+router.get('/success',successController);
 
 module.exports=router;
 

@@ -67,6 +67,19 @@ const CheckEMail = ({userDetails, isFifty}) => {
         });
         updateUser(); 
       }
+      if(response.data.status==="notok")
+      {
+        toast.error(response.data.error, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
     } catch (error) {
       toast.error("Payment not yet complete", {
         position: "top-center",

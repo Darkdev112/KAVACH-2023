@@ -1,3 +1,5 @@
+const url = require('url');
+
 const Insta = require('instamojo-nodejs');
 const paymentGateway=async(req,res)=>{
     const {name,email,amount}=req.body;
@@ -7,7 +9,7 @@ const paymentGateway=async(req,res)=>{
     console.log(amount);
 
     const data = new Insta.PaymentData();
-    console.log(data);
+    // console.log(data);
     const REDIRECT_URL="http://localhost:2000/success";
 
     data.setRedirectUrl(REDIRECT_URL);
@@ -35,4 +37,31 @@ const paymentGateway=async(req,res)=>{
 
 }
 
-module.exports=paymentGateway;
+const successController=(req,res)=>{
+
+  console.log(`hiii->`,req.url);
+ 
+  if(req.url==='/success'){
+    console.log("here");
+    return res.send({
+      status : "notok",
+      error : "Payment is not complete"
+    })
+  }
+
+  let url_parts = url.parse( req.url, true),
+  responseData = url_parts.query;
+
+  console.log(responseData);
+
+  // if(responseData.payment_id){
+  //   let userId=responseData.user_id;
+  // }
+
+  res.json({
+      status : "ok",
+      msg : "Payment Was SuccessFul please check your email for invoice in pdf"
+  });
+}
+
+module.exports={paymentGateway,successController};
