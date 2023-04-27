@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { openModal, closeModal, openLogin, closeLogin } from '../../redux/slices/modalSlice'
+import { closeModal } from '../../redux/slices/modalSlice'
 import "./Modal.scss"
 import Login from '../../components/Login/Login'
 import Signup from '../../components/Signup/Signup'
@@ -25,7 +25,6 @@ const Modal = () => {
                 <div className="overlay"></div>
                 <div className="modal-content">
                     {toggleLogin ? <Login/> : <Signup/>}
-                    {toggleLogin ? <p>Have not registered yet? <span onClick={()=> {dispatch(closeLogin())}}>Signup</span></p> : <p>Have an account? <span onClick={()=> {dispatch(openLogin())}}>Login</span></p>  }
                     <button className="close-modal" onClick={() => {dispatch(closeModal())}}>
                         <ImCross className='cross'/>
                     </button>

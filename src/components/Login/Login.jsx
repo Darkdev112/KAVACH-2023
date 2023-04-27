@@ -4,6 +4,7 @@ import axios from 'axios';
 import login from '../../Assets/images/signup.png'
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../../redux/slices/modalSlice';
+import { closeLogin } from '../../redux/slices/modalSlice';
 import { toast } from 'react-toastify'
 
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await axios.post('http://localhost:2000/login', { email, password }, {})
-      if (response.data.status == "ok") {
+      if (response.data.status === "ok") {
         localStorage.setItem('token', response.data.data)
         toast.success('Login successful', {
           position: "top-center",
@@ -61,7 +62,7 @@ const Login = () => {
       </div>
       <div className='login2'>
         <div className='login-image'>
-          <img className='img' src={login} />
+          <img className='img' src={login} alt='login'/>
         </div>
         <div className='text'>
           <input type="email" className="e-mail" placeholder="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required={true} />
@@ -69,7 +70,7 @@ const Login = () => {
 
           <button type="submit" className="btnn" onClick={handleSubmit}>LOGIN</button>
         </div>
-        <div className="parahh">haven't registered yet? Sign Up</div>
+        <div className="parahh" >haven't registered yet? <span onClick={()=> {dispatch(closeLogin())}}>Sign Up</span></div>
       </div>
     </div>
 

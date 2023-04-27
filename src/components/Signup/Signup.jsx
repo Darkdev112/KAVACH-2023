@@ -15,7 +15,7 @@ const Signup = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post('http://localhost:2000/signup', { username, email, password }, {})
-      if (response.data.status == "ok") {
+      if (response.data.status === "ok") {
         console.log(response.data.data);
         toast.success('Registration successful', {
           position: "top-center",
@@ -62,7 +62,7 @@ const Signup = () => {
       </div>
       <div className='sign2'>
         <div className='sign-image'>
-          <img className='imgg' src={sign} />
+          <img className='imgg' src={sign} alt='signup'/>
         </div>
         <div className='text'>'
           <input type="name" name="username" className="name" placeholder="Name" value={username} onChange={(e) => setUsername(e.target.value)} required={true} />
@@ -71,7 +71,7 @@ const Signup = () => {
           <br />
           <button type="submit" className="btn" onClick={(e) => { e.preventDefault(); handleSubmit(); dispatch(closeLogin()); }}>SIGN UP</button>
         </div>
-        <div className='parah'>already have an account? Login</div>
+        <div className='parah'>already have an account? <span onClick={()=> {dispatch(openLogin())}}>Login</span></div>
       </div>
     </div>
   )
