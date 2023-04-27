@@ -1,7 +1,9 @@
 import React,{useEffect} from 'react'
-import '../InsuranceFraud/InsuranceFraud'
+import '../InsuranceFraud/InsuranceFraud.scss'
 import { useNavigate } from 'react-router'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import img from "../../Assets/images/creditcardfraud.png"
 const CreditCardFraud = ({userDetails}) => {
   const nav = useNavigate();
 
@@ -16,12 +18,17 @@ const CreditCardFraud = ({userDetails}) => {
       navNow()
     }
   })
-
+  useEffect(()=>{
+    AOS.init({duration:2000})
+   },[])
+  
   return (
     <div className='fill-form'>
-      <h1>FILL THE DETAILS</h1>
+       <h1 data-aos="fade-left">FILL THE DETAILS</h1>
+       <div style={{backgroundImage:`url(${img})`}} className="bgFormImg"></div>
       {console.log(userDetails)}
-      <div className='form-container'>
+      <div className='form-container' data-aos='zoom-in'>
+       
         <div className="form">
           <div className="form-1">
             <div className="input-box">Enter number of months as customer:</div>
