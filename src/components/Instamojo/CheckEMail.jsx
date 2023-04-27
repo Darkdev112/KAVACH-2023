@@ -52,7 +52,10 @@ const CheckEMail = ({userDetails, isFifty}) => {
 
   const checkPayment = async () => {
     try {
-      const response = await axios.get('http://localhost:2000/success', {}, {});
+      const token = localStorage.getItem('token')
+      console.log(token);
+      const response = await axios.get('http://localhost:2000/success');
+      console.log(response.data);
       if(response.data.status==="ok")
       {
         toast.success('Check successful', {
@@ -65,7 +68,7 @@ const CheckEMail = ({userDetails, isFifty}) => {
           progress: undefined,
           theme: "light",
         });
-        updateUser(); 
+        // updateUser(); 
       }
       if(response.data.status==="notok")
       {

@@ -32,6 +32,10 @@ const UserLoginSignupSchema = new mongoose.Schema(
     hasPurchasedFullModel: {
       type: Boolean,
       default: false
+    },
+    userId:{
+      type:Boolean,
+      default:false
     }
   },
   {

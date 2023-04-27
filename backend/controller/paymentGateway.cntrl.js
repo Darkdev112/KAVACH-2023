@@ -1,4 +1,6 @@
 const url = require('url');
+const userLoginSignup = require('../models/userLoginSignup.mdl')
+
 
 const Insta = require('instamojo-nodejs');
 const paymentGateway=async(req,res)=>{
@@ -37,31 +39,61 @@ const paymentGateway=async(req,res)=>{
 
 }
 
-const successController=(req,res)=>{
+const successController=async(req,res)=>{
 
-  console.log(`hiii->`,req.url);
+//   let updatedObject1;
+
+//   console.log(`hiii->`,req.url);
+
+//   console.log(req.params);
+//   const Email = req.params.email;
+//   const oldUser = await userLoginSignup.findOne({
+//     email: Email
+//   });
+
+//   // let url_parts = url.parse( req.url, true),
+//   // responseData = url_parts.query;
  
-  if(req.url==='/success'){
-    console.log("here");
-    return res.send({
-      status : "notok",
-      error : "Payment is not complete"
-    })
-  }
+//   if(req.url==='/success'){
+//     updatedObject1=oldUser;
+//   }
+//   else{
+//     updatedObject1 = {
+//       ...oldUser,userId:true
+//     }
+//   }
 
-  let url_parts = url.parse( req.url, true),
-  responseData = url_parts.query;
 
-  console.log(responseData);
+//   console.log(updatedObject1);
 
-  // if(responseData.payment_id){
-  //   let userId=responseData.user_id;
-  // }
 
-  res.json({
+//   const newUser = await userLoginSignup.findOneAndUpdate({
+//     email: Email
+//   },
+//    updatedObject1, {
+//     new: true,
+//     runValidators: true,
+//   }
+// );
+
+//     if(newUser.userId){
+//       return res.json({
+//         status : "ok",
+//         msg : "Payment Was SuccessFul please check your email for invoice in pdf"
+//       })
+//     }
+//     else{
+//        return res.send({
+//           status : "notok",
+//           error : "Payment is not complete"
+//         })
+//     }
+
+    return res.json({
       status : "ok",
-      msg : "Payment Was SuccessFul please check your email for invoice in pdf"
-  });
+      data : "Payment Successful"
+    })
+
 }
 
 module.exports={paymentGateway,successController};
