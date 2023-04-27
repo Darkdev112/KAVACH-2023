@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../redux/slices/modalSlice";
 
-const Card = ({ img, link, userToken }) => {
+const Card = ({ img, link, userToken,aos}) => {
   const nav = useNavigate();
   const dispatch = useDispatch();
 
@@ -17,8 +17,10 @@ const Card = ({ img, link, userToken }) => {
   };
 
   return (
-    <div className="card">
+    <div data-aos={`${aos}`}>
+      <div className="card">
       <img src={img} alt="" onClick={handleNav} />
+    </div>
     </div>
   );
 };

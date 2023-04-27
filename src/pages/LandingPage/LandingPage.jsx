@@ -15,6 +15,8 @@ import Coin from '../../../src/Assets/images/coin.png'
 import Crypto from '../../../src/Assets/images/crypto.png'
 import Online from '../../../src/Assets/images/online.png'
 import './LandingPage.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const LandingPage = () => {
   const cards = [
@@ -77,7 +79,9 @@ const LandingPage = () => {
       setKey(Math.random())
     }
   }, [userToken, show])
-
+ useEffect(()=>{
+  AOS.init({duration:2000})
+ },[])
 
 
   return (
@@ -87,15 +91,15 @@ const LandingPage = () => {
         <>
           <Modal />
           <Navbar userToken={userToken} key={key} setKey={setKey} setUserToken={setUserToken} />
-          <Header />
-          <How/>
+          <Header aos='zoom-in' aos1='fade-down'/>
+          <How/> 
           <div className='card-section'>
             <div className="all-cards">
-              <h1>HEADING OF THE FRAUD TYPE</h1>
+              <h1 data-aos='fade-left'>HEADING OF THE FRAUD TYPE</h1>
                 <div className='cards'>
                   {cards.map((card)=>{
                     return(
-                      <Card key={card.id} img={card.img} link={card.link} userToken={userToken}/>
+                      <Card key={card.id} img={card.img} link={card.link} userToken={userToken} aos='flip-left'/>
                     )
                   })}
                 </div>
