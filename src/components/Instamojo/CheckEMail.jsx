@@ -83,10 +83,19 @@ const CheckEMail = ({userDetails, isFifty}) => {
 
   return (
     <>
-      <div>Bhayyy Check Email...</div>
+    <div className='email-section'>
+    <div className="email">
+      <div className="email-up"><img className='img1' src={bg} alt="" />
+      </div>
+      <div className="email-img"><img className='img2' src={email} alt="" />
+        <h3 className='heading-down'>Check your email</h3>
+        <p className='para-down'>We sent an email to you at your email adress.You can proceed your payment by clicking on that magic link</p>
+      </div>
+      </div>
+    </div>
       <h1>If payment is complete <span onClick={checkPayment}>click here</span></h1>
     </>
   )
 }
 
-export default CheckEMail
+export default CheckEMail;
