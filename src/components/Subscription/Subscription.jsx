@@ -15,18 +15,6 @@ const Subscription = ({ userDetails , setIsFifty}) => {
             console.log(error);
         }
     }
-
-
-    // return (
-    //     <div>
-    //         <div style={{ height: "100px", width: "100px", borderRadius: "10px", backgroundColor: "green", color: "white" }} onClick={() => { handlePayment(50); setIsFifty(true) }}>
-    //             50
-    //         </div>
-    //         <div style={{ height: "100px", width: "100px", borderRadius: "10px", backgroundColor: "red", color: "white" }} onClick={() => { handlePayment(1000); setIsFifty(false) }}>
-    //             1000
-    //         </div>
-    //     </div>
-    // )
     return (
         <div className='subscriptionContainer'>
             <h1>CHOOSE YOUR PLAN</h1>
