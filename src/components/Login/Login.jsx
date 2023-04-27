@@ -6,11 +6,13 @@ import { useDispatch } from 'react-redux';
 import { closeModal } from '../../redux/slices/modalSlice';
 import { closeLogin } from '../../redux/slices/modalSlice';
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
   const dispatch = useDispatch();
+  const nav = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,6 +31,7 @@ const Login = () => {
           theme: "light",
         });
         dispatch(closeModal())
+        nav(0)
       }
       else {
         toast.error(response.data.error, {

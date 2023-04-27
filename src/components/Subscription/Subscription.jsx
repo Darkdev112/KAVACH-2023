@@ -7,7 +7,7 @@ const Subscription = ({ userDetails , setIsFifty}) => {
     const nav = useNavigate();
     const handlePayment = async (amount) => {
         try {
-            const response = await axios.post('http://localhost:2000/pay', { username : userDetails.username, email : userDetails.email , amount:amount }, {});
+            const response = await axios.post('http://localhost:2000/pay', { username : userDetails.username, email : userDetails.email , amount:amount,}, {});
             // console.log(response);
             nav("/checkEmail");
         } catch (error) {

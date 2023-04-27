@@ -2,10 +2,11 @@ import React,{useEffect} from 'react'
 import { useNavigate } from 'react-router'
 
 const CoinFraud = ({userDetails}) => {
+  console.log("crypto : ", userDetails);
   const nav = useNavigate();
 
   const navNow = () => {
-    if((!userDetails.coinFraud) && (!userDetails.hasPurchasedFullModel)){
+    if((!userDetails.coinDetectionFraud) && (!userDetails.hasPurchasedFullModel)){
       nav('/subscription')
     }
   }

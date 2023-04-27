@@ -4,20 +4,20 @@ const userLoginSignup = require('../models/userLoginSignup.mdl')
 
 const Insta = require('instamojo-nodejs');
 const paymentGateway=async(req,res)=>{
-    const {name,email,amount}=req.body;
+    const {username,email,amount}=req.body;
 
-    console.log(name);
+    console.log(username);
     console.log(email);
     console.log(amount);
 
     const data = new Insta.PaymentData();
     // console.log(data);
-    const REDIRECT_URL="http://localhost:2000/success";
+    const REDIRECT_URL=`http://localhost:2000/success?username=${username}`;
 
     data.setRedirectUrl(REDIRECT_URL);
     data.send_email="True";
     data.purpose="KAVACH-2023 Payment";
-    data.name=name;
+    data.name=username;
     data.email=email;
     data.amount=amount;
 
@@ -41,59 +41,79 @@ const paymentGateway=async(req,res)=>{
 
 const successController=async(req,res)=>{
 
-//   let updatedObject1;
+  // let url_parts = url.parse(req.url,true),
+  // responseData = url_parts.query;
+  // console.log("Query : ",responseData);
 
-//   console.log(`hiii->`,req.url);
-
-//   console.log(req.params);
-//   const Email = req.params.email;
-//   const oldUser = await userLoginSignup.findOne({
-//     email: Email
-//   });
-
-//   // let url_parts = url.parse( req.url, true),
-//   // responseData = url_parts.query;
- 
-//   if(req.url==='/success'){
-//     updatedObject1=oldUser;
-//   }
-//   else{
-//     updatedObject1 = {
-//       ...oldUser,userId:true
-//     }
-//   }
+  // if(responseData?.username){
+  //   const oldUser = await userLoginSignup.findOne({
+  //     username : responseData.username
+  //   });
+  //   console.log("Checking olduser when server calls : ",oldUser);
 
 
-//   console.log(updatedObject1);
+  //   res.redirect(`http://localhost:2000/redirectPayment?username=${responseData.username}`)
+    
+  // }
+  
+  // else {
+  //   const {email} = req.query
+  //   console.log("Params : ",req.query);
+  //   const oldUser = await userLoginSignup.findOne({
+  //     email: email
+  //   });
+    
+  //   console.log(oldUser);
+  //   if(oldUser?.hasPaid){
+  //     return res.json({
+  //       status : "ok",
+  //       msg : "Payment Was SuccessFul please check your email for invoice in pdf"
+  //     })
+  //   }
+  //   else{
+  //      return res.send({
+  //         status : "notok",
+  //         error : "Payment is not complete"
+  //       })
+  //   }
 
+  // }
 
-//   const newUser = await userLoginSignup.findOneAndUpdate({
-//     email: Email
-//   },
-//    updatedObject1, {
-//     new: true,
-//     runValidators: true,
-//   }
-// );
-
-//     if(newUser.userId){
-//       return res.json({
-//         status : "ok",
-//         msg : "Payment Was SuccessFul please check your email for invoice in pdf"
-//       })
-//     }
-//     else{
-//        return res.send({
-//           status : "notok",
-//           error : "Payment is not complete"
-//         })
-//     }
-
-    return res.json({
-      status : "ok",
-      data : "Payment Successful"
-    })
+  res.send({
+    status : 'ok',
+    data : "Your payment was successful"
+  })
 
 }
 
-module.exports={paymentGateway,successController};
+const redirectController=async(req,res)=>{
+  let url_parts = url.parse(req.url,true),
+  responseData = url_parts.query;
+  console.log("redirectQuery : ",responseData);
+
+  const oldUser = await userLoginSignup.findOne({
+    username: responseData.username,
+  });
+
+  const newUser = await userLoginSignup.findOneAndUpdate({
+      username: responseData.username
+    },{...oldUser, hasPaid : true}, {
+      new: true,
+      runValidators: true,
+    }
+    );
+
+    if(newUser.hasPaid){
+      res.send({
+        data : "payment was successful"
+      })
+    }else{
+      res.send({
+        data: "some Problem Has Occuresd"
+      })
+    }
+    
+
+}
+
+module.exports={paymentGateway,successController,redirectController};

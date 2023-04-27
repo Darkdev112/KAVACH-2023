@@ -33,7 +33,7 @@ const UserLoginSignupSchema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
-    userId:{
+    hasPaid:{
       type:Boolean,
       default:false
     }

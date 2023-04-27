@@ -54,6 +54,7 @@ const Home = () => {
     getUserDetails();
   }, [])
 
+
   return (
     <Routes>
         <Route path='/' element={<LandingPage userDetails={userDetails}/>} />

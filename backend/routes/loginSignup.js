@@ -10,7 +10,7 @@ Insta.setKeys(API_KEY,AUTH_KEY);
 Insta.isSandboxMode(true);
 
 
-const {paymentGateway,successController}=require("../controller/paymentGateway.cntrl");
+const {paymentGateway,successController,redirectController}=require("../controller/paymentGateway.cntrl");
 
 const {signup,login}=require("../controller/loginSignup.cntrl");
 const {getSingleUser,updateUser}=require("../controller/userInfo.cntrl");
@@ -24,6 +24,7 @@ router.route('/instamojo',(req,res)=>{
 })
 router.post('/pay',paymentGateway);
 router.get('/success',successController);
+router.patch('/redirectPayment',redirectController);
 
 module.exports=router;
 

@@ -10,8 +10,9 @@ const CheckEMail = ({userDetails, isFifty}) => {
   const nav = useNavigate();
 
   const updateUser = async () => {
-    console.log(userDetails);
+    console.log("updateUser userdetails : ",userDetails);
     let obj;
+    console.log("50 : ",isFifty);
     if(isFifty){
       obj= {
         creditCardFraud : true,
@@ -27,6 +28,7 @@ const CheckEMail = ({userDetails, isFifty}) => {
       }
     }
     const token = localStorage.getItem('token');
+    console.log("updateUser Token : ",token);
     try {
       const response = await axios.patch('http://localhost:2000/singleUser', obj, {
         headers: {
@@ -34,10 +36,12 @@ const CheckEMail = ({userDetails, isFifty}) => {
           'Authorization' : `Bearer ${token}`
         }
       });
+      console.log("response ",response.data);
       if(response.data.status==="ok")
       {
         console.log(response.data.data);
-        nav('/');
+        nav('/')
+        nav(0)
       }
     } catch (error) {
       toast.error("Not updated", {
@@ -56,9 +60,11 @@ const CheckEMail = ({userDetails, isFifty}) => {
   const checkPayment = async () => {
     try {
       const token = localStorage.getItem('token')
-      console.log(token);
-      const response = await axios.get('http://localhost:2000/success');
-      console.log(response.data);
+      const response = await axios.get('http://localhost:2000/success',{
+        params : {
+          "email" : userDetails.email
+        }
+      });
       if(response.data.status==="ok")
       {
         toast.success('Check successful', {
@@ -71,7 +77,7 @@ const CheckEMail = ({userDetails, isFifty}) => {
           progress: undefined,
           theme: "light",
         });
-        // updateUser(); 
+        updateUser(); 
       }
       if(response.data.status==="notok")
       {
@@ -103,7 +109,7 @@ const CheckEMail = ({userDetails, isFifty}) => {
   return (
     <>
     <div className='email-section'>
-    <div className="email">
+    <div className="emaill">
       <div className="email-up"><img className='img1' src={bg} alt="" />
       </div>
       <div className="email-img"><img className='img2' src={email} alt="" />

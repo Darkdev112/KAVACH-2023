@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import { useNavigate } from 'react-router'
 
 const CryptoFraud = ({userDetails}) => {
+  console.log("crypto : ", userDetails);
   const nav = useNavigate();
 
   const navNow = () => {
