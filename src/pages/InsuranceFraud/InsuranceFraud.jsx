@@ -87,7 +87,7 @@ const InsuranceFraud = ({userDetails}) => {
             </input>
 
             <div className="input-box">Enter injury claim amount:</div>
-            <input type="number" id="injuryclaim" name="injuryclaim" />
+            <input type="number" id="injuryclaim" name="injuryclaim" {...formik.getFieldProps("policereport")}/>
 
             <div className="input-box">Enter property claim amount:</div>
             <input type="number" id="propclaim" name="propclaim" {...formik.getFieldProps("propclaim")}/>
