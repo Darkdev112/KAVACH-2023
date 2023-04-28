@@ -11,15 +11,15 @@ const UserLoginSignupSchema = new mongoose.Schema(
     },
     creditCardFraud: {
       type: Boolean,
-      default: true
+      default: false
     },
     onlineFraud: {
       type: Boolean,
-      default: true
+      default: false
     },
     debitCardFraud: {
       type: Boolean,
-      default: true
+      default: false
     },
     cryptoFraud: {
       type: Boolean,
