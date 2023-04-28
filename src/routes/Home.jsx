@@ -11,7 +11,6 @@ import Instamojo from '../components/Instamojo/Instamojo'
 import CheckEMail from '../components/Instamojo/CheckEMail'
 import Subscription  from '../components/Subscription/Subscription' 
 import axios from 'axios'
-
 const Home = () => {
   const [isFifty, setIsFifty] = useState(true);
   const [userDetails, setUserDetails] = useState({

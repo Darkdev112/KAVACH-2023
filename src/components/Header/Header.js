@@ -8,10 +8,9 @@ const Header = ({aos,aos1}) => {
         <div className='header-all'>
             <div className='header'>
                 <div className='head-text' data-aos={`${aos1}`}>
-                    <h1 className='heading'><span className='red-head'>LOREM</span> EPSUM</h1>
-                    <div className='parah-header'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, harum
-                        quod, odio molestias ratione officia quis debitis ab, omnis quas magnam consectetur
-                        voluptatem pariatur unde illum doloribus provident quia dolore!</div>
+                    <h1 className='heading'>Fraudsters<span className='red-head'> BEWARE</span> we are always there</h1>
+                    <div className='parah-header'>One stop solution for financial fraud identification. br
+                    Facilitating a safe financial experience by awaring users of possible financial frauds</div>
                 </div>
                 <div className='head-image' data-aos={`${aos}`}>
                     <img src={character} alt="" />
