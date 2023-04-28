@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 .how{
+    padding: 20px;
     height: 600px;
-    background-color: greenyellow;
+    // background-color: greenyellow;
+    background-image: url('../../../src/Assets/images/how.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 20px;
 }
-h1{
+.h1{
+    margin: 20px 0;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.use-how{
+    color: red;
 }
 .video{
     margin: auto;
     height: 500px;
-    width: 800px;
-    background-color: darkblue;
+    width: 50vw;
+    background-color: rgba(0, 0, 139, 0.525);
 }

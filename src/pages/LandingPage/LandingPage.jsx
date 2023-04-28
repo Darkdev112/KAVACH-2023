@@ -95,7 +95,7 @@ const LandingPage = () => {
           <How/> 
           <div className='card-section'>
             <div className="all-cards">
-              <h1 data-aos='fade-left'>HEADING OF THE FRAUD TYPE</h1>
+              <div data-aos='fade-left' className='heading-cards'><h1>HEADING OF THE <span className='fraud-typee'>FRAUD TYPE</span></h1></div>
                 <div className='cards'>
                   {cards.map((card)=>{
                     return(

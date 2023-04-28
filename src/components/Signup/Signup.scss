@@ -9,9 +9,37 @@
     border-radius:20px 15px 15px 20px;
 }
 .sign1{
-    background-color: rgba(217, 217, 217, 1);
+    background-color: rgb(255, 255, 255);
     width: 100px;
     border-radius: 15px 0 0 15px;
+}
+.login-hover{
+    cursor: pointer;
+}
+.login-hover:hover{
+    color: rgb(255, 121, 121);
+}
+.signup-logooo{
+    margin-top: 7px;
+    height: 60px;
+    width: 65px;
+}
+.fraud-h1{
+    font-weight: 800;
+    margin: 2px 0;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+.stop-h1{
+    font-weight: 800;
+    margin: 2px 0;
+    color: red;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+.fraud-all-h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .imgg{
     height: 200px;

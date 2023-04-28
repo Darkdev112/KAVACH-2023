@@ -1,32 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 .nav{
     display: flex;
-    margin: 10px 10px;
+    background-color: rgb(255, 246, 234);
+}
+.logo-name{
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: red;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+.logo-title{
+    color: black;
 }
 .left{
+    cursor: pointer;
     flex: 1;
     display: flex;
     align-items: center;
     .logo{
+        margin-left: 20px;
+        margin-bottom: 17px;
         margin-right: 15px;
         height: 50px;
         width: 50px;
-        background-color: black;
+        img{
+            height: 70px;
+            width: 75px;
+        }
     }
 }
 .middle{
     flex: 1;
     display: flex;
     align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
     .about-us{
+        cursor: pointer;
         margin: 0 25px;
-        font-weight: 600;
+        font-weight: 700;
+        letter-spacing: 1.2px;
     }
     .home{
-        font-weight: 600;
+        color: red;
+        cursor: pointer;
+        font-weight: 700;
         margin-left: -30px;
+        letter-spacing: 1.2px;
     }
     .contact-us{
-        font-weight: 600;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+    }
+    .home:hover{
+        color: red;
+    }
+    .contact-us:hover{
+        color: red;
+    }
+    .about-us:hover{
+        color: red;
     }
 }
 .right{
@@ -49,13 +85,39 @@
         margin-right: 15px;
     }
 }
+.login-signup-btn{
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    height: 40px;
+    width: 170px;
+    padding: 0 20px;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2s;
+}
+.login-signup-btn:hover{
+    background-color: black;
+    color: white;
+}
+.hamb{
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .burger{
+    cursor: pointer;
     display: none;
     height: 3rem;
-    width: 3rem;
-    background-color: black;
+    width: 3.5rem;
+
 }
 .navContent{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,16 +125,30 @@
     text-align: center;
     background-color: black;
     color: white;
-    border: 1px solid white;
+    border-bottom: 1px solid rgb(219, 121, 121);
+    transition: all 0.2s;
+}
+.navContent:hover{
+    background-color: red;
+}
+.log-sign-up{
+    background-color: rgb(227, 68, 68);
 }
 @media(max-width:748px){
     .burger{
         display: block;
     }
-    .nav{
-        background-color: violet;
-    }
     .middle, .right{
         display: none;
     }
+}
+.right{
+    margin: 15px 0;
+}
+.home-small{
+    color: rgb(255, 111, 111);
+    font-weight: 700;
+}
+.home-small:hover{
+    color: white;
 }

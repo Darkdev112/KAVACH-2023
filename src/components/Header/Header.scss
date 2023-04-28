@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+.header-all{
+    margin-bottom: -20px;
+}
 .header{
     background-image: url("../../../src/Assets/images/header.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
+}
+.red-head{
+    color: red;
 }
 .head-text{
     background-color: rgb(255, 255, 255, 0.2);

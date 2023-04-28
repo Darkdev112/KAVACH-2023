@@ -9,18 +9,20 @@ const Footer = () => {
     return (
         <div>
             <div className="foot-up">
-                <h2 className='head'>LOGO NAME with logo</h2>
-                <p className='foot-para'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aut laborum cupiditate id corporis recusandae. Optio distinctio assumenda exercitationem eaque nisi, voluptatibus voluptate aut repudiandae veritatis deleniti reiciendis perferendis blanditiis.</p>
-                <h4>Further details: <a href="">xtasy.tech</a></h4>
-                <h4 className='contact-num'>Contact: 1234567890, 1234567890</h4>
-                <div className="footer-logos">
-                    <div className='footer-logo'><FaFacebookF /></div>
-                    <div className='footer-logo insta'><AiOutlineInstagram /></div>
-                    <div className='footer-logo'><BsTwitter /></div>
-                    <div className='footer-logo'><GrGooglePlus /></div>
+                <div className="footer-up">
+                    <h2 className='head'>FRAUD <span className='stop-footer'>STOP</span></h2>
+                    <p className='foot-para'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate unde enim veniam cum aliquid!</p>
+                    <h4>Further details: <a href="https://xtasy.tech/">xtasy.tech</a></h4>
+                    <h4 className='contact-num'>Contact: 1234567890, 1234567890</h4>
+                    <div className="footer-logos">
+                        <div className='footer-logo'><FaFacebookF /></div>
+                        <div className='footer-logo insta'><AiOutlineInstagram /></div>
+                        <div className='footer-logo'><BsTwitter /></div>
+                        <div className='footer-logo'><GrGooglePlus /></div>
+                    </div>
                 </div>
             </div>
-            <div className="foot-down">Copyright @2023 <a href=""> logo_name</a></div>
+            <div className="foot-down">Copyright @2023 <a href=""> fraud_stop</a></div>
         </div>
     )
 }

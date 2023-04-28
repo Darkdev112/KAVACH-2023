@@ -5,10 +5,10 @@ import character from '../../Assets/images/character.png'
 
 const Header = ({aos,aos1}) => {
     return (
-        <div>
+        <div className='header-all'>
             <div className='header'>
                 <div className='head-text' data-aos={`${aos1}`}>
-                    <h1 className='heading'>LOREM EPSUM</h1>
+                    <h1 className='heading'><span className='red-head'>LOREM</span> EPSUM</h1>
                     <div className='parah-header'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, harum
                         quod, odio molestias ratione officia quis debitis ab, omnis quas magnam consectetur
                         voluptatem pariatur unde illum doloribus provident quia dolore!</div>

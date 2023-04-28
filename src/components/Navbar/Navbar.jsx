@@ -1,41 +1,47 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.scss'
-import { RiAccountCircleFill } from 'react-icons/ri'
+// import { RiAccountCircleFill } from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
 import { openModal } from '../../redux/slices/modalSlice'
-import burger from '../../../src/Assets/images/navbutton.png'
+import logo from '../../../src/Assets/images/logo.png'
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 const Navbar = ({ userToken, setUserToken }) => {
   const [navBtn, setNavBtn] = useState(false)
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className='navv-all'>
       <div className="nav">
         <div className="left">
-          <div className="logo"></div>
-          <div className="logo-name">LOGO NAME</div>
+          <div className="logo"><img src={logo} alt="" /></div>
+          <span className="logo-name"><span className='logo-title'>FRAUD</span> STOP</span>
         </div>
         <div className="middle">
-          <div className="home">home</div>
-          <div className="about-us">about us</div>
-          <div className="contact-us">contact us/query</div>
+          <div className="home">HOME</div>
+          <div className="about-us">ABOUT US</div>
+          <div className="contact-us">CONTACT US</div>
         </div>
         <div className="right">
-          {!userToken && <div className="login-signUp" onClick={() => { dispatch(openModal()) }}>Login/SignUp</div>}
-          {userToken && <div className="login-signUp" onClick={() => { localStorage.removeItem('token'); setUserToken("") }}>Logout</div>}
-          <div className="profile"><RiAccountCircleFill className='profile-logo' /></div>
+          {!userToken && <div className="login-signUp" onClick={() => { dispatch(openModal()) }}>
+            <button className='login-signup-btn'>LOGIN/SIGN UP</button>
+          </div>}
+          {userToken && <div className="login-signUp" onClick={() => { localStorage.removeItem('token'); setUserToken("") }}>
+            <button className='login-signup-btn'>LOGOUT</button>
+          </div>}
+          {/* <div className="profile"><RiAccountCircleFill className='profile-logo' /></div> */}
         </div>
-        <img className='burger' src={burger} alt="" onClick={() => setNavBtn(!navBtn)} />
+        <div className="hamb"><GiHamburgerMenu className='burger' onClick={() => setNavBtn(!navBtn)}/></div>
       </div>
       {
         navBtn && (
           <div className="nav2">
             <div className="navTabs">
-              <div className="navContent">home</div>
-              <div className="navContent">about us</div>
-              <div className="navContent">contact us/query</div>
-              {!userToken && <div className="navContent" onClick={() => { dispatch(openModal()) }}>Login/SignUp</div>}
-              {userToken && <div className="navContent" onClick={() => { localStorage.removeItem('token'); setUserToken("") }}>Logout</div>}
+              <div className="navContent home-small">HOME</div>
+              <div className="navContent">ABOUT US</div>
+              <div className="navContent">CONTACT US</div>
+              
+              {!userToken && <div className="navContent log-sign-up" onClick={() => { dispatch(openModal()) }}>LOGIN/SIGN UP</div>}
+              {userToken && <div className="navContent log-sign-up" onClick={() => { localStorage.removeItem('token'); setUserToken("") }}>LOGOUT</div>}
             </div>
           </div>
         )
