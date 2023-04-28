@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { useNavigate } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import '../InsuranceFraud/InsuranceFraud.scss'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -7,6 +7,7 @@ import img from "../../Assets/images/debitCardFraud.png"
 
 const DebitCardFraud = ({userDetails}) => {
   const nav = useNavigate();
+  const { pathname } = useLocation();
 
   const navNow = () => {
     if((!userDetails.debitCardFraud) && (!userDetails.hasPurchasedFullModel)){
@@ -22,6 +23,11 @@ const DebitCardFraud = ({userDetails}) => {
   useEffect(()=>{
     AOS.init({duration:2000})
    },[])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname])
+
   return (
     <div className='fill-form'>
        <h1 data-aos="fade-left">FILL THE DETAILS</h1>
