@@ -10,7 +10,10 @@ import CoinFraud from '../pages/CoinFraud/CoinFraud'
 import Instamojo from '../components/Instamojo/Instamojo'
 import CheckEMail from '../components/Instamojo/CheckEMail'
 import Subscription  from '../components/Subscription/Subscription' 
+import Safe from '../components/Safe/Safe'
+import Scam from '../components/Scam/Scam'
 import axios from 'axios'
+
 const Home = () => {
   const [isFifty, setIsFifty] = useState(true);
   const [userDetails, setUserDetails] = useState({
@@ -66,6 +69,8 @@ const Home = () => {
         <Route path='/instamojo' element={<Instamojo/>} />
         <Route path='/checkEmail' element={<CheckEMail userDetails={userDetails} isFifty={isFifty}/>} />
         <Route path='/subscription' element={<Subscription userDetails={userDetails} setIsFifty={setIsFifty}/>}/>
+        <Route path='/safe' element={<Safe/>}/>
+        <Route path='/scam' element={<Scam/>}/>
     </Routes>
   )
 }

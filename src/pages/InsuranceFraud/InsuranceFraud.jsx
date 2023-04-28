@@ -20,6 +20,7 @@ const InsuranceFraud = ({userDetails}) => {
 
   const onSubmit = async (values) => {
     console.log(values);
+    nav('/checkPage');
   }
 
   const formik = useFormik({
