@@ -13,6 +13,7 @@ import Subscription  from '../components/Subscription/Subscription'
 import Safe from '../components/Safe/Safe'
 import Scam from '../components/Scam/Scam'
 import axios from 'axios'
+import CheckPage from '../pages/CheckPage/CheckPage'
 
 const Home = () => {
   const [isFifty, setIsFifty] = useState(true);
@@ -71,6 +72,7 @@ const Home = () => {
         <Route path='/subscription' element={<Subscription userDetails={userDetails} setIsFifty={setIsFifty}/>}/>
         <Route path='/safe' element={<Safe/>}/>
         <Route path='/scam' element={<Scam/>}/>
+        <Route path='/checkPage' element={<CheckPage/>}/>
     </Routes>
   )
 }

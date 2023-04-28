@@ -14,7 +14,7 @@ const Loading = () => {
     }
 
   return (
-    <div className='container'>
+    <div className='containerr'>
         <PacmanLoader
         color="rgb(36, 36, 36)"
         loading={isLoading}

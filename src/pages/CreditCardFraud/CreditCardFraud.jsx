@@ -4,6 +4,9 @@ import { useNavigate, useLocation } from 'react-router'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import img from "../../Assets/images/creditcardfraud.png"
+import {useFormik} from 'formik'
+import { insurancevalidate } from '../../lib/validate'
+
 const CreditCardFraud = ({userDetails}) => {
   const nav = useNavigate();
   const { pathname } = useLocation();
@@ -13,6 +16,34 @@ const CreditCardFraud = ({userDetails}) => {
       nav('/subscription')
     }
   }
+
+  const onSubmit = async (values) => {
+    console.log(values);
+    nav('/checkPage');
+  }
+
+  const formik = useFormik({
+    initialValues : {
+      years : 0,
+      policycsl : 0,
+      policydeduct : 0,
+      annualprem : 0,
+      umblimit : 0,
+      policereport : 0,
+      injuryclaim : 0,
+      propclaim : 0,
+      vehicleclaim : 0,
+      totalclaim : 0,
+      capitalgain : 0,
+      capitalloss : 0,
+      noofvehicles : 0,
+      propertydamaged : 0,
+      bodilyinjuries : 0,
+    },
+    validate : insurancevalidate,
+    onSubmit
+  })
+
 
   useEffect(()=> {
     if(userDetails.email){
@@ -29,66 +60,71 @@ const CreditCardFraud = ({userDetails}) => {
   
   return (
     <div className='fill-form'>
-       <h1 data-aos="fade-left">FILL THE DETAILS</h1>
-       <div style={{backgroundImage:`url(${img})`}} className="bgFormImg"></div>
-      {console.log(userDetails)}
-      <div className='form-container' data-aos='zoom-in'>
-       
-        <div className="form">
-          <div className="form-1">
-            <div className="input-box">Enter number of months as customer:</div>
-            <input type="number" id="months" name="months" />
-            <div className="input-box">Enter policy holder's age:</div>
-            <input type="text" id="age" name="age" />
-            <div className="input-box">Enter policy state:</div>
-            <input type="text" id="policy-state" name="policy-state" />
-            <div className="input-box">Enter policy csl:</div>
-            <input type="text" id="policy-csl" name="policy-csl" />
-            <div className="input-box">Enter policy deductable:</div>
-            <input type="text" id="policy-deduct" name="policy-deduct" />
-            <div className="input-box">Enter policy annual premium:</div>
-            <input type="text" id="annual-prem" name="annual-prem" />
-            <div className="input-box">Enter umbrella limit:</div>
-            <input type="text" id="umb-limit" name="umb-limit" />
-            <div className="input-box">Enter insured zip:</div>
-            <input type="text" id="insured-zip" name="insured-zip" />
-            <div className="input-box">Enter number of witnesses:</div>
-            <input type="number" id="witness" name="witness" />
+    <h1 data-aos="fade-left">FILL THE DETAILS</h1>
+    <div style={{backgroundImage:`url(${img})`}} className="bgFormImg"></div>
+   
+   <form className='form-container' data-aos='zoom-in' onSubmit={formik.handleSubmit}>
+    
+     <div className="form">
+       <div className="form-1">
+         <div className="input-box">Enter number of years as customer:</div>
+         <input type="number" id="years" name="years" {...formik.getFieldProps("years")}/>
 
-          </div>
-          <div className='form-2'>
-            <div className="input-box">Is policy report available?</div>
-            <select name="policy-report" id="policy-report">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-              <option value="notSure">?</option>
-            </select>
-            <div className="input-box">Enter injury claim amount:</div>
-            <input type="text" id="injury-claim" name="injury-claim" />
-            <div className="input-box">Enter property claim amount:</div>
-            <input type="text" id="prop-claim" name="prop-claim" />
-            <div className="input-box">Enter vehicle claim amount:</div>
-            <input type="text" id="vehicle-claim" name="vehicle-claim" />
-            <div className="input-box">Enter total claim amount:</div>
-            <input type="text" id="total-claim" name="total-claim" />
-            <div className="input-box">Name of the auto maker company:</div>
-            <input type="text" id="auto-maker" name="auto-maker" />
-            <div className="input-box">Name of auto model:</div>
-            <input type="text" id="auto-model" name="auto-model" />
-            <div className="input-box">Name of auto manufacturing year:</div>
-            <input type="text" id="man-year" name="man-year" />
-            <div className="input-box">Was the fraud reported?:</div>
-            <select name="fraud-report" id="fraud-report">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-        </div>
-        <div className='submitBtnCont'>
-          <button className='submitBtn'>Submit</button>
-        </div>
-      </div>
-    </div>
+         <div className="input-box">Enter policy csl:</div>
+         <input type="number" id="policycsl" name="policycsl" {...formik.getFieldProps("policycsl")} />
+
+         <div className="input-box">Enter policy deductable:</div>
+         <input type="number" id="policydeduct" name="policydeduct" {...formik.getFieldProps("policydeduct")}/>
+
+         <div className="input-box">Enter policy annual premium:</div>
+         <input type="number" id="annualprem" name="annualprem" {...formik.getFieldProps("annualprem")} />
+
+         <div className="input-box">Enter umbrella limit:</div>
+         <input type="number" id="umblimit" name="umblimit" {...formik.getFieldProps("umblimit")} />
+
+         <div className="input-box">Is police report available?</div>
+         <input  name="policereport" id="policereport" {...formik.getFieldProps("policereport")}>
+         </input>
+
+         <div className="input-box">Enter injury claim amount:</div>
+         <input type="number" id="injuryclaim" name="injuryclaim" {...formik.getFieldProps("injuryclaim")}/>
+
+         <div className="input-box">Enter property claim amount:</div>
+         <input type="number" id="propclaim" name="propclaim" {...formik.getFieldProps("propclaim")}/>
+
+       </div>
+       <div className='form-2'>
+
+       <div className="input-box">Enter vehicle claim:</div>
+         <input type="number" id="vehicleclaim" name="vehicleclaim" {...formik.getFieldProps("vehicleclaim")} />
+
+         <div className="input-box">Enter total claim amount:</div>
+         <input type="number" id="totalclaim" name="totalclaim" {...formik.getFieldProps("totalclaim")}/>
+
+         <div className="input-box">Enter capital gain:</div>
+         <input type="number" id="capitalgain" name="capitalgain" {...formik.getFieldProps("capitalgain")}/>
+
+         <div  className="input-box">Enter capital loss:</div>
+         <input type="number" id="capitalloss" name="capitalloss" {...formik.getFieldProps("capitalloss")}/>
+
+         <div className="input-box">Enter number of vehicles:</div>
+         <input type="number" id="noofvehicles" name="noofvehicles" {...formik.getFieldProps("noofvehicles")}/>
+
+         <div className="input-box">Was any property damaged?</div>
+         <input type='number' name="propertydamaged" id="propertydamaged" {...formik.getFieldProps("propertydamaged")}/>
+
+
+         <div className="input-box">Enter no of bodily injuries:</div>
+         <input type="number" id="bodilyinjuries" name="bodilyinjuries" {...formik.getFieldProps("bodilyinjuries")}/>
+
+       </div>
+     </div>
+     <div className='submitBtnCont'>
+       <button type='submit' className='submitBtn'>Submit</button>
+     </div>
+
+   </form>
+ </div>
   )
 }
 

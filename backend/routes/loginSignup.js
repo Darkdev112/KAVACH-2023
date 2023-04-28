@@ -23,7 +23,7 @@ router.route('/instamojo',(req,res)=>{
     res.sendFile(__dirname + ".../src/components/Instamojo/Instamojo.jsx")
 })
 router.post('/pay',paymentGateway);
-router.get('/success/:email',successController);
+router.get('/success',successController);
 router.post('/createCompanyAPI',createCompanyAPI);
 router.patch('/updateCompanyAPI',updateCompanyAPI);
 

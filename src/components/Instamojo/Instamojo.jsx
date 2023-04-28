@@ -41,7 +41,7 @@ const Instamojo = () => {
         </div>
 
         <div className="form-group">
-          <button class="btn" onClick={(e) => {e.preventDefault(); handleSubmit(); }}>
+          <button className="btn" onClick={(e) => {e.preventDefault(); handleSubmit(); }}>
                Generate Payment Link
           </button>
         </div>

@@ -11,12 +11,15 @@ const createCompanyAPI=async(req,res)=>{
         const company = await companyAPI.create({
             name
          })
-         res.send({
+        return res.send({
              status: "ok",
              data: company ,
          })
     } catch (error) {
-        console.log(error);
+        return res.send({
+          status: "notok",
+          data: error ,
+        })
     }
 }
 

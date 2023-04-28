@@ -25,21 +25,21 @@ const InsuranceFraud = ({userDetails}) => {
 
   const formik = useFormik({
     initialValues : {
-      years : "",
-      policycsl : "",
-      policydeduct : "",
-      annualprem : "",
-      umblimit : "",
-      policereport : "",
-      injuryclaim : "",
-      propclaim : "",
-      vehicleclaim : "",
-      totalclaim : "",
-      capitalgain : "",
-      capitalloss : "",
-      noofvehicles : "",
-      propertydamaged : "",
-      bodilyinjuries : "",
+      years : 0,
+      policycsl : 0,
+      policydeduct : 0,
+      annualprem : 0,
+      umblimit : 0,
+      policereport : 0,
+      injuryclaim : 0,
+      propclaim : 0,
+      vehicleclaim : 0,
+      totalclaim : 0,
+      capitalgain : 0,
+      capitalloss : 0,
+      noofvehicles : 0,
+      propertydamaged : 0,
+      bodilyinjuries : 0,
     },
     validate : insurancevalidate,
     onSubmit
@@ -88,7 +88,7 @@ const InsuranceFraud = ({userDetails}) => {
             </input>
 
             <div className="input-box">Enter injury claim amount:</div>
-            <input type="number" id="injuryclaim" name="injuryclaim" {...formik.getFieldProps("policereport")}/>
+            <input type="number" id="injuryclaim" name="injuryclaim" {...formik.getFieldProps("injuryclaim")}/>
 
             <div className="input-box">Enter property claim amount:</div>
             <input type="number" id="propclaim" name="propclaim" {...formik.getFieldProps("propclaim")}/>
@@ -109,7 +109,7 @@ const InsuranceFraud = ({userDetails}) => {
             <input type="number" id="capitalloss" name="capitalloss" {...formik.getFieldProps("capitalloss")}/>
 
             <div className="input-box">Enter number of vehicles:</div>
-            <input type="number" id="noofvehicles" name="vehicles" {...formik.getFieldProps("vehicles")}/>
+            <input type="number" id="noofvehicles" name="noofvehicles" {...formik.getFieldProps("noofvehicles")}/>
 
             <div className="input-box">Was any property damaged?</div>
             <input type='number' name="propertydamaged" id="propertydamaged" {...formik.getFieldProps("propertydamaged")}/>
