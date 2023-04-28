@@ -2,6 +2,7 @@
     text-align: center;
     height: 100vh ;
     padding-top: 3rem;
+    background: linear-gradient(violet,blue);
 }
 .subCardContainer{
     display: flex;
@@ -66,7 +67,7 @@
 .OrStrip{
     width: 0px;
     height: 8rem;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 .OR{
     display: flex;
@@ -76,6 +77,7 @@
 }
 .OrText{
     font-size: 3rem;
+    color: white;
 }
 .subCardDetails{
     font-size:1.2rem;
